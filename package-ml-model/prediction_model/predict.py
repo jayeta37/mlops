@@ -8,11 +8,11 @@ from prediction_model.processing.data_handling import load_dataset, load_pipelin
 classification_pipeline = load_pipeline()
 
 def generate_predictions(data_input = None):
-    test_data = load_dataset(config.TEST_FILE)
-    # data = pd.DataFrame(data_input)
+    # test_data = load_dataset(config.TEST_FILE)
+    test_data = pd.DataFrame(data_input)
     prediction = classification_pipeline.predict(test_data[config.FEATURES])
     output = np.where(prediction == 1, 'Y', 'N')
-    result = {"Predictions" : output}
+    result = {"predictions" : output}
     print(result)
     return result
 
