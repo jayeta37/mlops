@@ -6,7 +6,7 @@ A machine learning model for predicting loan approvals. This project is part of 
 
 - [Description](#description)
 - [Installation](#installation)
-- [Directory_Structure](#directory_structure)
+- [Directory Structure](#directory_structure)
 
 ## Description
 
@@ -20,7 +20,7 @@ To install the package, you need to have Python 3.7 or above. You can install th
 pip install git+https://github.com/jayeta37/mlops.git
 ```
 
-## Directory_Structure
+## Directory Structure
 
 MLOPS/
 ├── build/
