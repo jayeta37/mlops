@@ -10,6 +10,8 @@ from sklearn.model_selection import train_test_split, GridSearchCV
 import mlflow
 from sklearn import metrics
 
+mlflow.set_tracking_uri("http://0.0.0.0:5001/")
+
 # Dataset
 dataset_path = os.path.abspath("./datasets")
 train_df = pd.read_csv(os.path.join(dataset_path, "train.csv"))
@@ -23,10 +25,10 @@ categorical_cols.remove('Loan_ID')
 
 # Filling blanks
 for col in categorical_cols:
-    train_df[col].fillna(train_df[col].mode()[0], inplace=True)
+    train_df.fillna({col:train_df[col].mode()[0]}, inplace=True)
 
 for col in numerical_cols:
-    train_df[col].fillna(train_df[col].median(), inplace=True)
+    train_df.fillna({col:train_df[col].median()}, inplace=True)
 
 # Filling Outliers
 train_df[numerical_cols] = train_df[numerical_cols].apply(lambda x:x.clip(*x.quantile([0.05, 0.95])))
@@ -134,6 +136,7 @@ def eval_metrics(actual, pred):
 
 def mlflow_logging(model, X, y, name):
     with mlflow.start_run() as run:
+        mlflow.set_tracking_uri("http://0.0.0.0:5001/")
         run_id = run.info.run_id
         mlflow.set_tag("run_id", run_id)
         pred = model.predict(X)

@@ -60,3 +60,10 @@ MLOPS/
 ├── .gitignore
 ├── Loan-Prediction.ipynb
 └── requirements.txt
+
+- Installation for mysqlclient
+
+`pip install mysqlclient`
+
+- MLFlow Server
+`mlflow server --host 0.0.0.0 --port 5000 --backend-store-uri mysql://root:{password}@localhost/mlflow_db --default-artifact-root $PWD/mlruns`
