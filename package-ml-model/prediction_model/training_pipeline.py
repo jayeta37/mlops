@@ -6,7 +6,7 @@ try:
     import prediction_model.processing.preprocessing as pp
     import prediction_model.pipeline as pipeline
 except:
-    raise Exception("Try:\nexport PYTHONPATH=/home/jay/Documents/AIOps/mlops/package-ml-model")
+    raise Exception("Try:\nexport PYTHONPATH=/home/jay/Documents/mlops/package-ml-model")
  
 def perform_training():
     train_data = load_dataset(config.TRAIN_FILE)

@@ -1,3 +1,6 @@
+MANIFEST.in
+README.md
+requirements.txt
 setup.py
 prediction_model.egg-info/PKG-INFO
 prediction_model.egg-info/SOURCES.txt

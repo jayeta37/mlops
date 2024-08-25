@@ -1,43 +1,84 @@
 Metadata-Version: 2.1
-Name: prediction_model
+Name: prediction-model
 Version: 1.0.0
 Summary: Loan Prediction Model
 Home-page: https://github.com/jayeta37/mlops
 Author: Jayesh Tawade
 Author-email: jay37tawade@gmail.com
 Maintainer: Jayesh Tawade
+License: UNKNOWN
+Platform: UNKNOWN
 Requires-Python: >=3.7.0
 Description-Content-Type: text/markdown
-Requires-Dist: asttokens==2.4.1
-Requires-Dist: decorator==5.1.1
-Requires-Dist: executing==2.0.1
-Requires-Dist: iniconfig==2.0.0
-Requires-Dist: ipdb==0.13.13
-Requires-Dist: ipython==8.26.0
-Requires-Dist: jedi==0.19.1
-Requires-Dist: joblib==1.4.2
-Requires-Dist: matplotlib-inline==0.1.7
-Requires-Dist: numpy==2.0.0
-Requires-Dist: packaging==24.1
-Requires-Dist: pandas==2.2.2
-Requires-Dist: parso==0.8.4
-Requires-Dist: pexpect==4.9.0
-Requires-Dist: pluggy==1.5.0
-Requires-Dist: prompt_toolkit==3.0.47
-Requires-Dist: ptyprocess==0.7.0
-Requires-Dist: pure-eval==0.2.2
-Requires-Dist: Pygments==2.18.0
-Requires-Dist: pytest==8.2.2
-Requires-Dist: python-dateutil==2.9.0.post0
-Requires-Dist: pytz==2024.1
-Requires-Dist: scikit-learn==1.5.0
-Requires-Dist: scipy==1.14.0
-Requires-Dist: six==1.16.0
-Requires-Dist: stack-data==0.6.3
-Requires-Dist: threadpoolctl==3.5.0
-Requires-Dist: traitlets==5.14.3
-Requires-Dist: typing_extensions==4.12.2
-Requires-Dist: tzdata==2024.1
-Requires-Dist: wcwidth==0.2.13
 
-Loan Prediction Model
+
+# Loan Prediction Model
+
+A machine learning model for predicting loan approvals. This project is part of the MLOps series and includes end-to-end processes for data handling, model training, prediction, and deployment.
+
+## Table of Contents
+
+- [Description](#description)
+- [Installation](#installation)
+- [Directory Structure](#directory_structure)
+
+## Description
+
+This project aims to predict loan approvals using various machine learning techniques. It covers the entire MLOps lifecycle including data preprocessing, model training, evaluation, and deployment.
+
+## Installation
+
+To install the package, you need to have Python 3.7 or above. You can install the package directly from GitHub using pip.
+
+```sh
+pip install git+https://github.com/jayeta37/mlops.git
+```
+
+## Directory Structure
+
+MLOPS/
+├── build/
+├── dist/
+├── package-ml-model/
+│   ├── build/
+│   ├── dist/
+│   ├── prediction_model/
+│   │   ├── __pycache__/
+│   │   ├── config/
+│   │   │   ├── __pycache__/
+│   │   │   ├── config.py
+│   │   ├── datasets/
+│   │   │   ├── test.csv
+│   │   │   ├── train.csv
+│   │   ├── processing/
+│   │   │   ├── __pycache__/
+│   │   │   ├── data_handling.py
+│   │   │   ├── preprocessing.py
+│   │   ├── trained_models/
+│   │   │   ├── classification.pkl
+│   │   ├── __init__.py
+│   │   ├── pipeline.py
+│   │   ├── predict.py
+│   │   ├── training_pipeline.py
+│   │   ├── VERSION
+│   │   ├── prediction_model.egg-info/
+│   ├── tests/
+│   │   ├── __pycache__/
+│   │   ├── .pytest_cache/
+│   │   ├── pytest.ini
+│   │   ├── test_prediction.py
+│   ├── MANIFEST.in
+│   ├── README.md
+│   ├── requirements.txt
+│   ├── setup.py
+├── .gitignore
+├── Loan-Prediction.ipynb
+└── requirements.txt
+
+- Installation for mysqlclient
+
+`pip install mysqlclient`
+
+- MLFlow Server
+`mlflow server --host 0.0.0.0 --port 5000 --backend-store-uri mysql://root:{password}@localhost/mlflow_db --default-artifact-root $PWD/mlruns`
+

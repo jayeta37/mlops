@@ -20,6 +20,11 @@ To install the package, you need to have Python 3.7 or above. You can install th
 pip install git+https://github.com/jayeta37/mlops.git
 ```
 
+## Environment creation
+```
+conda create -n prediction
+```
+
 ## Directory Structure
 
 MLOPS/
@@ -60,6 +65,11 @@ MLOPS/
 ├── .gitignore
 ├── Loan-Prediction.ipynb
 └── requirements.txt
+
+## Create a source distribution
+```
+python setup.py sdist
+```
 
 - Installation for mysqlclient
 
